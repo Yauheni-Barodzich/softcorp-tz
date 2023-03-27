@@ -1,0 +1,90 @@
+.header {
+    background-color: #10101De6;
+    color: $color-white;
+    width: 100%;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    min-height: 100px;
+    @include css3-prefix(transform, translate(-50%));
+    z-index: 9999;;
+
+    &__logo {
+        text-transform: uppercase;
+        font-family: $font-logo;
+
+        & span {
+            color: $color-blue;
+        }
+
+        @include breakpoints(x-small, large) {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            border-bottom: 1px solid $color-blue;
+        }
+
+        @include breakpoints(large, max) {
+            font-size: 28px;
+        }
+    }
+
+    &__menu {
+        margin-top: 8px;
+        margin-left: 10px;
+
+        & ul {
+            padding: 0;
+        }
+        & li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 10px 25px;
+
+            a {
+                color: $color-white;
+                text-transform: uppercase;
+    
+                &:hover {
+                    color: $color-blue;
+                }
+                
+            }
+
+            &.active a {
+                color: $color-blue;
+            }
+        }
+
+        @include breakpoints(x-small, large) {
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-align: center;
+
+            & li {
+                padding: 10px;
+            }
+        }
+
+        @include breakpoints(large, max) {
+            font-size: 13px;
+            text-align: right;
+        }
+    }
+
+    &__wrap {
+        @include breakpoints(large, max) {
+            width: $main-width-page;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            min-height: 100px;
+
+            & > * {
+                width: calc($main-width-page / 2) - 5;
+            }
+        }
+    }
+}

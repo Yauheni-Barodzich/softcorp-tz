@@ -1,0 +1,464 @@
+.orderform {
+    min-height: 920px;
+    @include background('../img/bottom-image.webp');
+    background-color: $color-bottom-bg;
+    padding-top: 120px;
+    color: $color-white;
+
+    @include breakpoints(x-small, large) {
+        padding-top: 50px;
+    }
+
+    &__wrap {
+        width: $main-width-page;
+        margin: auto;
+
+        @include breakpoints(x-small, small) {
+            width: 100%;
+        }
+
+        @include breakpoints(small, large) {
+            width: 640px;
+            margin: auto;
+            text-align: center;
+        }
+    }
+
+    & h2 {
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-white;
+        font-size: 36px;
+
+        & span {
+            color: $color-blue;
+        }
+    }
+
+    &__tips {
+        color: #BBBBBB;
+        font-size: 18px;
+        text-align: center;
+        font-weight: 200;
+        margin-top: 35px;
+        padding: 0 20px;
+    }
+
+    &__steps {
+        color: $color-white;
+        margin-top: 78px;
+        
+        @include breakpoints(x-small, large) {
+            text-align: center;
+            margin-top: 25px;
+            padding-bottom: 25px;
+        }
+
+        & ul {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        & li {
+            list-style-type: '';
+            display: inline-block;
+            width: 209px;
+            text-align: center;
+            vertical-align: top;
+            font-size: 16px;
+            margin-right: 12px;
+            height: 165px;
+            position: relative;
+
+            @include breakpoints(small, large) {
+                width: 160px;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                width: 100px;
+                height: 100px;
+                margin: auto;
+                background-color: $color-blue-ligth;
+                margin-bottom: 20px;
+                border-radius: 50%;
+                border: 5px solid $color-blue-stroke;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                margin: auto;
+                width: 111px;
+                height: 6px;
+                position: absolute;
+                right: -30%;
+                top: 30%;
+                @include background('../img/bullets.webp', 50%);
+
+                @include breakpoints(x-small, large) {
+                    display: none;
+                }
+            }
+
+            &:last-child::after {
+                display: none;
+                background: none;
+            }
+
+            &:hover::before {
+                border: 5px solid $color-white;
+            }
+        }
+
+        &__search {
+            &::before {
+                @include background('../img/search.webp', 50%);
+            }
+        }
+
+        &__promo {
+            &::before {
+                @include background('../img/percent.webp', 50%);
+            }
+        }
+
+        &__add {
+            &::before {
+                @include background('../img/add.webp', 50%);
+            }
+        }
+
+        &__send {
+            &::before {
+                @include background('../img/mail.webp', 50%);
+            }
+        }
+
+        &__pay {
+            &::before {
+                @include background('../img/money.webp', 50%);
+            }
+        }
+    }
+
+    &__form {
+        margin-top: 78px;
+        padding-bottom: 50px;
+
+        & input[type=text], &__file span, button {
+            height: 48px;
+            min-width: 370px;
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+
+            &:hover {
+                color: $color-blue;
+            }
+        }
+
+        @include breakpoints(x-small, small) {
+            width: 80%;
+            margin: auto;
+        }
+            
+        & > * {
+            display: inline-block;
+            margin-bottom: 20px;
+            margin-right: 15px;
+
+            @include breakpoints(x-small, small) {
+                display: block;
+                width: 100%;
+                min-width: auto;
+                margin-right: 0;
+            }
+        }
+
+        &__select {
+            position: relative;
+            min-width: 370px;
+            color: $color-white;
+            font-size: 18px;
+            
+            &[open] {
+                z-index: 1;
+
+                & summary {
+                    border-radius: 3px 3px 0 0;
+                    background-color: #3D4050d9;
+
+                    &:before {
+                        content: '';
+                        display: block;
+                        width: 100vw;
+                        height: 100vh;
+                        background: transparent;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                    }
+                    &:after {
+                        @include css3-prefix(transform, rotate(135deg) translate(0%, 0%));
+                        color: $color-white;
+                    }
+
+                    & input[type=radio] {
+                        &:checked {
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+            
+            &__radios {
+                padding: 0.85rem;
+                height: 48px;
+                cursor: pointer;
+                border-radius: 3px 3px;
+                background-color: $color-white;
+                color: $color-white;
+                list-style: none;
+                counter-reset: radios;
+
+                &:before {
+                    content: var(--selection);
+                }
+
+                &:after {
+                    content: '';
+                    display: inline-block;
+                    width: .45rem;
+                    height: .45rem;
+                    position: absolute;
+                    right: 20px;
+                    top: 23px;
+                    color: black;
+                    border-bottom: 1px solid currentColor;
+                    border-left: 1px solid currentColor;
+                    border-bottom-left-radius: 2px;
+                    @include css3-prefix (transform, rotate(315deg));
+                    @include css3-prefix (transform-origin, center center);
+                }
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::-webkit-details-marker {
+                    display: none;
+                }
+
+                & input[type=radio] {
+                    counter-increment: radios;
+                    appearance: none;
+                    display: none;
+
+                    &:checked {
+                        display: inline;
+                        --display: block;
+                        color: black;
+                    }
+
+                    &:after {
+                        content: attr(title);
+                        display: inline;
+                        font-size: 1rem;
+                    }
+                }
+            }
+            
+            &__list {
+                width: 100%;
+                background: $color-bottom-bg;
+                color: $color-white;
+                position: absolute;
+                left: 0;
+                padding: 1rem;
+                margin: 0;
+                box-sizing: border-box;
+                border-radius: 0 0 3px 3px;
+                max-height: 200px;
+                overflow-y: auto;
+                counter-reset: labels;
+                border: 1px solid $color-dark-grey;
+
+                & li {
+                    margin: 0;
+                    padding: 8px 0;
+                    font-size: 18px;
+                    list-style-type: '';
+
+                    &:first-child {
+                        padding-top: 0;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 0;
+                        border-bottom: none;
+                    }
+
+                   & label {
+                        width: 100%;
+                        display: flex;
+                        cursor: pointer;
+                        justify-content: space-between;
+
+                        & span {
+                            --display: none;
+                            display: var(--display);
+                            width: 1rem;
+                            height: 1rem;
+                            border: 1px solid #727272;
+                            border-radius: 3px;
+                        }
+
+                        &:hover {
+                            color: $color-blue;
+                        }
+                    }
+                }
+
+                &::-webkit-scrollbar {
+                    width: 7px;
+                    border-radius: 3px;
+                }
+    
+                &::-webkit-scrollbar-track {
+                    border: rgb(180, 180, 180);
+                    border-radius: 3px;
+                    margin: 5px;
+                    background-color: $color-dark-grey;
+                }
+                  
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 3px;
+                    background-color: $color-blue-ligth;
+                }
+            }
+        }
+
+        &__file {
+            position: relative;
+            display: inline-block;
+            vertical-align: bottom;
+
+            & span {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                outline: none;
+                text-decoration: none;
+                font-size: 14px;
+                color: black;
+                text-transform: uppercase;
+                text-align: center;
+                border-radius: 4px;
+                background-color: $color-white;
+                line-height: 22px;
+                height: 48px;
+                padding: 14px;
+                box-sizing: border-box;
+                border: none;
+                margin: 0;
+
+                @include breakpoints(x-small, small) {
+                    width: 100%;
+                }
+
+                &:hover {
+                    color: $color-blue;
+                }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    @include background('../img/doc.webp');
+                    position: absolute;
+                    left: 80px;
+
+                    @include breakpoints(x-small, small) {
+                        left: 25%;
+                    }
+                }
+            }
+
+            & input[type=file] {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+                display: block;
+                width: 0;
+                height: 0;
+            }
+        }
+
+        &__slider {
+            width: 760px;
+
+            @include breakpoints(x-small, large) {
+                width: 370px;
+                text-align: left;
+            }
+
+            @include breakpoints(x-small, small) {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            & input[type="range"] {
+                @include css3-prefix(appearance, none !important);
+                width: 100%;
+                height: 5px;
+                background: #ffffffb3;
+                border: 1px solid $color-white;
+                outline: none;
+                border-radius: 3px;
+                margin-top: 18px;
+                bottom: -3px;
+                position: relative;
+
+                &::-webkit-slider-thumb {
+                    @include css3-prefix(appearance, none !important);
+                    width: 24px;
+                    height:24px;
+                    background: $color-blue;
+                    border: 3px solid $color-blue-stroke;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: $color-white;
+                    }
+                }
+            }
+
+            &__value {
+                float: right;
+            }
+        }
+
+        &__submit {
+            display: block;
+            text-align: center;
+            margin-top: 32px;
+
+            & button{
+                background-color: $color-blue-ligth;
+                color: $color-white;
+                border: 1px solid $color-white;
+                font-size: 15px;
+
+                &:hover {
+                    border: 1px solid $color-blue-stroke;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}

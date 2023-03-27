@@ -1,0 +1,99 @@
+.slider {
+    width: 100%;
+    min-height: 600px;
+    @include background('../img/main-image.webp');
+    background-size: cover;
+    background-position: center;
+    padding-top: 1px;
+
+    & ul {
+        padding: 10px 15px;
+    }
+
+    @include breakpoints(large, max) {
+        height: 850px;
+    }
+
+    &__wrap {
+        width: $main-width-page;
+        margin: auto;
+        margin-top: 200px;
+
+        @include breakpoints(x-small, large) {
+            width: 100%;
+            padding: 20px;
+        }
+
+        @include breakpoints(x-small, small) {
+            margin-top: 180px;
+        }
+    }
+
+    &__title{
+        font-family: $font-main-bold;
+        font-size: 48px;
+        text-transform: uppercase;
+        width: 780px;
+        line-height: 1.23em;
+
+        @include breakpoints(x-small, large) {
+            width: 100%;
+        }
+
+        @include breakpoints(x-small, small) {
+            font-size: 28px;
+        }
+
+        & span {
+            color: $color-blue;
+        }
+    }
+
+    &__text {
+        font-size: 20px;
+        margin-top: 90px;
+        margin-bottom: 66px;
+        line-height: 1.35em;
+
+        & li {
+            list-style-type: '- ';
+        }
+
+        @include breakpoints(x-small, small) {
+            margin: 40px 0;
+        }
+    }
+
+    &__order, &__more {
+        font-size: 13px;
+        padding: 15px 15px 10px;
+        width: 183px;
+        margin-right: 25px;
+        margin-bottom: 20px;
+
+        @include breakpoints(x-small, small) {
+            width: 100%;
+        }
+    }
+
+    &__order {
+        background-color: $color-blue-ligth;
+        color: $color-white;
+        border: 1px solid $color-white;
+
+        &:hover {
+            background-color: $color-blue;
+            border: 1px solid $color-grey;
+        }
+    }
+
+    &__more {
+        background-color: $color-white;
+
+        &:hover {
+            background-color: $color-grey;
+            color: $color-white;
+            border: 1px solid $color-white;
+        }
+    }
+}

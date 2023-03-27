@@ -1,0 +1,94 @@
+.footer {
+    min-height: 80px;
+    background-color: $color-dark-grey;
+    font-size: 13px;
+
+    &__wrap {
+        width: $main-width-page;
+        margin: auto;
+
+        @include breakpoints(x-small, large) {
+            width: auto;
+        }
+    }
+
+    &__links {
+        padding-top: 34px;
+        padding-left: 0;
+
+        &__qiwi, &__ym, &__wm {
+            color: $color-light-grey;
+        }
+
+        &__qiwi, &__mail {
+            border-left: 1px solid $color-light-grey;
+
+            @include breakpoints(x-small, large) {
+                border: none;
+            }
+        }
+
+        &__qiwi {
+            @include background('../img/qiwi.webp', 40px 0);
+            padding-left: 70px;
+            margin-left: 40px;
+        }
+
+        &__ym {
+            @include background('../img/ym.webp', 7px 0);
+            padding-left: 30px;
+            margin-left: 30px;
+        }
+
+        &__wm {
+            @include background('../img/wm.webp', 5px 0);
+            padding-left: 30px;
+            margin-left: 30px;
+        }
+
+        &__mail {
+            @include background('../img/mail-logo.webp', 37px 0);
+            padding-left: 70px;
+            margin-left: 40px;
+        }
+
+        &__vk {
+            @include background('../img/vk.webp', 2px 0);
+            padding-left: 30px;
+            margin-left: 30px;
+        }
+
+        & > * {
+            display: inline-block;
+            padding-top: 5px;
+
+            @include breakpoints(x-small, large) {
+                margin-bottom: 20px;
+                margin-left: 20px;
+            }
+
+            & a {
+                color: $color-white;
+                
+                &:hover {
+                    color: $color-blue;
+                }
+            }
+        }
+
+        &__license {
+            color: $color-white;
+
+            @include breakpoints(x-small, large) {
+                display: block;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+
+        @include breakpoints(x-small, large) {
+            padding: 35px 35px 25px 10px;
+            text-align: center;
+        }
+    }
+}

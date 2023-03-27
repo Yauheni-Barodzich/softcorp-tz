@@ -1,0 +1,56 @@
+<div class="orderform" id="orderform">
+    <div class="orderform__wrap">
+        <h2>Оформление <span>Заказа</span></h2>
+        <div class="orderform__tips">Перед заполнением формы ознакомьтесь с нашей схемой работы!</div>
+        <div class="orderform__steps">
+            <ul>
+                <li class="orderform__steps__search">Lorem ipsum dolor sit amet</li>
+                <li class="orderform__steps__promo">Сonsecteturadipiscing elit</li>
+                <li class="orderform__steps__add">Sed do eiusmod tempor</li>
+                <li class="orderform__steps__send">Esse cillum dolore eu fugiat</li>
+                <li class="orderform__steps__pay">Excepteur sint occaecat cupidatat non proident</li>
+            </ul>
+        </div>
+        <form class="orderform__form" id="formOrder" action="/" method="post">
+            <details class="orderform__form__select">
+                <summary class="orderform__form__select__radios">
+                    <input type="radio" name="item" id="default" title="Выберите тип системы" checked>
+                    <input type="radio" name="item" id="item1" title="Sed ut perspiciatis">
+                    <input type="radio" name="item" id="item2" title="Nemo enim ipsam">
+                    <input type="radio" name="item" id="item3" title="Et harum quidem">
+                    <input type="radio" name="item" id="item4" title="Temporibus autem">
+                    <input type="radio" name="item" id="item5" title="Itaque earum rerum">
+                    <input type="radio" name="item" id="item6" title="Sed ut perspiciatis">
+                    <input type="radio" name="item" id="item7" title="Nemo enim ipsam">
+                    <input type="radio" name="item" id="item8" title="Itaque ut perspiciatis">
+                    <input type="radio" name="item" id="item9" title="Et harum earum">
+                </summary>
+                <ul class="orderform__form__select__list">
+                    <li><label for="item1">Sed ut perspiciatis<span></span></label></li>
+                    <li><label for="item2">Nemo enim ipsam</label></li>
+                    <li><label for="item3">Et harum quidem</label></li>
+                    <li><label for="item4">Temporibus autem</label></li>
+                    <li><label for="item5">Itaque earum rerum</label></li>
+                    <li><label for="item6">Sed ut perspiciatis</label></li>
+                    <li><label for="item7">Nemo enim ipsam</label></li>
+                    <li><label for="item8">Itaque ut perspiciatis</label></li>
+                    <li><label for="item9">Et harum earum</label></li>
+                </ul>
+            </details>
+            <input name="email" type="text" id="form_email" value="Ваш e-mail">
+            <input name="name" type="text" id="form_name" value="Ваше имя">
+            <div class="orderform__form__slider">
+                <span class="orderform__form__slider__tip">Sed ut perspiciatis, unde omnis iste natus</span>
+                <span class="orderform__form__slider__value">75%</span>
+                <input name="slider" type="range" class="orderform__form__slider__range" oninput="updateSliderValue()" min="0" max="100" value="75">
+            </div>
+            <label class="orderform__form__file">
+                <input type="file" name="file">		
+                <span>Прикрепить файл</span>
+          </label>
+          <div class="orderform__form__submit">
+            <button type="submit">Отправить</button>
+          </div>
+        </form>
+    </div>
+</div>
