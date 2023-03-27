@@ -67,6 +67,14 @@
                 margin-left: 20px;
             }
 
+            @include breakpoints(x-small, small) {
+                display: block;
+                text-align: left;
+                margin-left: 20px;
+                padding-left: 38px;
+                background-position: 0;
+            }
+
             & a {
                 color: $color-white;
                 
@@ -83,6 +91,10 @@
                 display: block;
                 text-align: center;
                 margin-bottom: 20px;
+            }
+
+            @include breakpoints(x-small, small) {
+                padding-left: 0;
             }
         }
 

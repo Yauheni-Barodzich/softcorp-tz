@@ -7,7 +7,11 @@
     top: 0;
     min-height: 100px;
     @include css3-prefix(transform, translate(-50%));
-    z-index: 9999;;
+    z-index: 9999;
+
+    @include breakpoints(x-small, large) {
+        position: relative;
+    }
 
     &__logo {
         text-transform: uppercase;

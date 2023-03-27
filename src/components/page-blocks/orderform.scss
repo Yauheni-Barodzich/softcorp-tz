@@ -158,6 +158,10 @@
             &:hover {
                 color: $color-blue;
             }
+
+            @include breakpoints(x-small, small) {
+                min-width: 100%;
+            }
         }
 
         @include breakpoints(x-small, small) {
@@ -183,6 +187,10 @@
             min-width: 370px;
             color: $color-white;
             font-size: 18px;
+
+            @include breakpoints(x-small, small) {
+                min-width: auto;
+            }
             
             &[open] {
                 z-index: 1;
