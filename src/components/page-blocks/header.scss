@@ -10,7 +10,7 @@
     z-index: 9999;
 
     @include breakpoints(x-small, large) {
-        position: relative;
+        position: inherit;
     }
 
     &__logo {
@@ -37,6 +37,10 @@
     &__menu {
         margin-top: 8px;
         margin-left: 10px;
+
+        @include breakpoints(x-small, large) {
+            margin-left: 0;
+        }
 
         & ul {
             padding: 0;

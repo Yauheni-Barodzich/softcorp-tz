@@ -74,6 +74,10 @@
         @include breakpoints(x-small, small) {
             width: 100%;
         }
+
+        @include breakpoints(x-small, large) {
+            margin-right: 0;
+        }
     }
 
     &__order {
